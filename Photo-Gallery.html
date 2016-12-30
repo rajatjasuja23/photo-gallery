@@ -1,0 +1,106 @@
+<html>
+    <head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="./node_modules/react-component-visibility/index.js"
+
+<script type="text/babel">
+            var GoodDeal = React.createClass({    
+                render() {
+                    return  <div className="photo_tileview album1" style="width:160px;height:160px;">
+                              <div className="photo_tileview_inner" style="width:156px;height:156px;">
+                                <div className="photo_tileview_content box_photo1" style="width:150px;height:150px;">
+                                  <a href="resources_photogallery_album.html">
+                                    <img src={this.props.appitem.Img} border="0" style="visibility:visible;vertical-align:inherit;" />
+                                    <div className="photo_tileview_detailsbox caption_photo1" style="height:150px;top:100px;left:0;width:150px;">
+                                      <ul className="photo_tileview_detailslist">
+                                        <li className="photo_tileview_medium photo_tileview_titlesmcollapsed">
+                                          <div className="photo_tileview_titletxtsmcollapsed" expanded="photo_tileview_titletxtsmexpanded" collapsed="photo_tileview_titletxtsmcollapsed">{this.props.appitem.Title}</div>
+                                        </li>
+                                        <li className="photo_tileview_descmedium">
+                                          <div></div>
+                                          <div></div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div className="photo_tileview_tabularbox hide">
+                                  <a className="photo_tileview_selectionbox">
+                                    <span className="s4-itm-cbox s4-itm-imgcbox">
+                                      <span className="s4-itm-imgcbx-inner">
+                                        <span className="selectitem-span">
+                                          <i className="fa fa-check"></i>
+                                        </span>
+                                      </span>
+                                    </span>
+                                  </a>
+                                  <div className="list-titlelink"></div>
+                                  <a className="lstitmlinkanchor ellpsis-a-tile">
+                                    <i className="fa fa-ellipsis-h"></i>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>            
+                }
+            });
+
+            var GoodDeals = React.createClass({  
+                mixins : [
+                    //required
+                    ComponentVisibilityMixin
+                ],
+                getInitialState() {
+                    return {
+                        promodata: [{"Title":"9th Division/Infantry Team Building on 29 Oct 2016","Img":"./photo-gallery-master/photo-gallery/folder_img.png"},
+{"Title":"2016 DFO Planning Retreat\n","Img":"./photo-gallery-master/photo-gallery/folder_img.png"},
+{"Title":"Family and ACTIVE Day 2016\n","Img":"./photo-gallery-master/photo-gallery/folder_img.png"},
+{"Title":"Merry Christmas 2016\n","Img":"./photo-gallery-master/photo-gallery/folder_img.png"},
+{"Title":"Album 5\n","Img":"./photo-gallery-master/photo-gallery/folder_img.png"},
+{"Title":"Album 6\n","Img":"./photo-gallery-master/photo-gallery/folder_img.png"}]
+                    }
+                },                            
+                retrieveFromWebService() {                    
+                    var that = this;
+                    var url = 'sampledata.json';
+                    fetch(url)
+                    .then(function(response) {
+                        if (response.status >= 400) {
+                            throw new Error("Bad response from server");
+                        }              
+                        return response.json();
+                    })
+                    .then(function(data) {                        
+                        that.setState({ promodata: data});                        
+                    });
+                },                 
+                componentVisibilityChanged() {
+                    this.retrieveFromWebService();
+                    this.disableVisibilityHandling();
+                },   
+                renderPromotions() {
+                    return this.state.promodata.map((promoitem) => (    
+                        <GoodDeal appitem={promoitem} />
+                    ));                   
+                },            
+                 render() {
+                     return <div>{this.renderPromotions()} </div>;
+                 }
+            });
+
+            ReactDOM.render(
+                <GoodDeals />, 
+                document.getElementById('root')
+            );
+        </script>
+    </head>
+    <body>
+         <p>
+        This is hello world!!
+    </p>
+    <div id="root">
+  
+   </div> 
+    </body>
+</html>
