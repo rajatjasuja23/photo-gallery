@@ -40,7 +40,7 @@ var Photo = React.createClass({
           { className: 'photo_tileview_content box_photo1', style: photo1 },
           React.createElement(
             'a',
-            { href: '/Photo%20Gallery/Forms/ReactPhotogallery.aspx#', onclick: 'SP.UI.TileView.Utilities.itemLinkNavigate(\'8,1,1\',\'Tile_WPQ2_1_9\');', style: anchor },
+            { href: '\'/Photo%20Gallery/Forms/ReactPhotogallery.aspx?RootFolder=%2FPhoto%20Gallery%2F\' + \'{this.props.appitem.Title}\' + \'&FolderCTID=0x0120003C30C36929368B4EAD3FB4BE033BE7F6&View=%7B55E9424E-3877-47CB-95F0-2AFE14B15FE7%7D\' ', onclick: 'SP.UI.TileView.Utilities.itemLinkNavigate(\'8,1,1\',\'Tile_WPQ2_1_9\');', style: anchor },
             React.createElement('img', { src: this.props.appitem.Img, border: '0', style: image }),
             React.createElement(
               'div',
