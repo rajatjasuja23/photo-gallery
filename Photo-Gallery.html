@@ -4,17 +4,46 @@
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <script src="./node_modules/react-component-visibility/index.js"></script>
+
 <script type="text/babel">
 
-var Photo=React.createClass({
-render()
-{
-return  <div className="photo_tileview album1">
-                              <div className="photo_tileview_inner">
-                                <div className="photo_tileview_content box_photo1" >
-                                  <a href="resources_photogallery_album.html">
-                                    <img src={this.props.appitem.Img} border="0"/>
-                                    <div className="photo_tileview_detailsbox caption_photo1">
+    var Photo=React.createClass({
+    render()
+    {
+        var album1={
+        width:'160',
+        height:'160'
+        }
+        var inner={
+        width:'156',
+        height:'156'
+        }
+        var photo1={
+        width:'150',
+        height:'150'
+        }
+        var anchor={
+        visibility:'visible',
+        verticalAlign:'inherit'
+        }
+        var caption_photo1={
+        height:'150',
+        top:'100',
+        left:'0',
+        width:'150'
+        }
+        var image={
+          width:'100%'
+        }
+
+
+
+return  <div className="photo_tileview album1" style={album1}>
+                              <div className="photo_tileview_inner" style={inner} >
+  <div className="photo_tileview_content box_photo1" style={photo1}>
+                                  <a href="/Photo%20Gallery/Forms/ReactPhotogallery.aspx#" onclick="SP.UI.TileView.Utilities.itemLinkNavigate('8,1,1','Tile_WPQ2_1_9');" style={anchor}>
+    <img src={this.props.appitem.Img} border="0" style={image}/> 
+                                    <div className="photo_tileview_detailsbox caption_photo1" style={caption_photo1}>
                                       <ul className="photo_tileview_detailslist">
                                         <li className="photo_tileview_medium photo_tileview_titlesmcollapsed">
                                           <div className="photo_tileview_titletxtsmcollapsed" >{this.props.appitem.Title}</div>
@@ -51,26 +80,26 @@ mixins : [
 getInitialState()
 {
 return {
-    promodata:[{"Title":"9th Division/Infantry Team Building on 29 Oct 2016","Img":"./folder_img.png"},
-{"Title":"2016 DFO Planning Retreat\n","Img":"./folder_img.png"},
-{"Title":"Family and ACTIVE Day 2016\n","Img":"./folder_img.png"},
-{"Title":"Merry Christmas 2016\n","Img":"./folder_img.png"},
-{"Title":"Album 5\n","Img":"./folder_img.png"},
-{"Title":"Album 6\n","Img":"./folder_img.png"}]
+    promodata:[{"Title":"9th Division/Infantry Team Building on 29 Oct 2016","Img":"/Style%20Library/mindef/img/folder_img.png"},
+{"Title":"2016 DFO Planning Retreat\n","Img":"/Style%20Library/mindef/img/folder_img.png"},
+{"Title":"Family and ACTIVE Day 2016\n","Img":"/Style%20Library/mindef/img/folder_img.png"},
+{"Title":"Merry Christmas 2016\n","Img":"/Style%20Library/mindef/img/folder_img.png"},
+{"Title":"Album 5\n","Img":"/Style%20Library/mindef/img/folder_img.png"},
+{"Title":"Album 6\n","Img":"/Style%20Library/mindef/img/folder_img.png"}]
 }
 },
 
 
 getPromoData()
 {
-    return [{"Title":"Universal Studio Singapore Promotion: Winter Season","PromoPeriod":"01 Dec 2016 to 02 Jan 2017","Postedby":"MSS-PSC","Date":"30-Dec-16"},
-{"Title":"Financial Planning Awareness Talk\n","PromoPeriod":"25 Oct 2016 to 04 Nov 2016","Postedby":"MSS-PSC","Date":"12/30/2016"}]
+    return [{"Title":"Universal Studio Singapore Promotion: Winter Season"},
+            {"Title":"Financial Planning Awareness Talk\n"}]
 },
 retrieveFromWebService()
 {
  console.log('inside component did mount')
     var that=this;
-    var url="photo-gallery.json"
+    var url="photo-gallery.js"
     fetch(url)
     .then(function(response)
     {
