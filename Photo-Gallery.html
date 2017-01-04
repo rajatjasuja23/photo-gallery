@@ -36,37 +36,66 @@
           width:'100%'
         }
 
-return  <div className="photo_tileview album" style={album1}>
-                              <div className="photo_tileview_inner" style={inner} >
-  <div className="photo_tileview_content box_photo" style={photo1}>
-                                  <a style={anchor}>
-    <img src={this.props.appitem.Img} style={image}/> 
-                                    <div className="photo_tileview_detailsbox caption_photo" style={caption_photo1}>
-                                      <ul className="photo_tileview_detailslist">
-                                        <li className="photo_tileview_medium photo_tileview_titlesmcollapsed">
-                                          <div className="photo_tileview_titletxtsmcollapsed" >{this.props.appitem.Title}</div>
+return <div class="col-md-9 maincontent_box fluid_content">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="maincontent_heading">
+                <div class="box_title_heading">Photo Gallery</div>
+                <div class="box_allview_wrapper">&nbsp;</div>
+              </h1>
+              <div class="main_content">
+                <h2>Latest Albums</h2>
+                <div class="table-responsive photo_gallery">
+                  <table class="table">
+                    <tbody>
+                      <tr role="row" setedgeborder="true">
+                        <td colspan="30" style="border:none;">
+                          <div>
+                            <div class="photo_tileview album" style={album1}>
+                              <div class="photo_tileview_inner" style={inner}>
+                                <div class="photo_tileview_content box_photo" style={photo1}>
+                                  <a href="resources_photogallery_album.html" style={anchor}>
+                                    <img src={this.props.appitem.Img} style={image}/>
+                                    <div class="photo_tileview_detailsbox caption_photo" style={caption_photo1}>
+                                      <ul class="photo_tileview_detailslist">
+                                        <li class="photo_tileview_medium photo_tileview_titlesmcollapsed">
+                                          <div class="photo_tileview_titletxtsmcollapsed" expanded="photo_tileview_titletxtsmexpanded" collapsed="photo_tileview_titletxtsmcollapsed">{this.props.appitem.Title}</div>
+                                        </li>
+                                        <li class="photo_tileview_descmedium">
+                                          <div></div>
+                                          <div></div>
                                         </li>
                                       </ul>
                                     </div>
                                   </a>
                                 </div>
-                                <div className="photo_tileview_tabularbox hide">
-                                  <a className="photo_tileview_selectionbox">
-                                    <span className="s4-itm-cbox s4-itm-imgcbox">
-                                      <span className="s4-itm-imgcbx-inner">
-                                        <span className="selectitem-span">
-                                          <i className="fa fa-check"></i>
+                                <div class="photo_tileview_tabularbox hide">
+                                  <a class="photo_tileview_selectionbox">
+                                    <span class="s4-itm-cbox s4-itm-imgcbox">
+                                      <span class="s4-itm-imgcbx-inner">
+                                        <span class="selectitem-span">
+                                          <i class="fa fa-check"></i>
                                         </span>
                                       </span>
                                     </span>
                                   </a>
-                                  <div className="list-titlelink"></div>
-                                  <a className="lstitmlinkanchor ellpsis-a-tile">
-                                    <i className="fa fa-ellipsis-h"></i>
+                                  <div class="list-titlelink"></div>
+                                  <a class="lstitmlinkanchor ellpsis-a-tile">
+                                    <i class="fa fa-ellipsis-h"></i>
                                   </a>
                                 </div>
                               </div>
-                            </div>  
+                            </div>      
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 }
 });
 
