@@ -31,30 +31,30 @@ var Photo = React.createClass({
 
     return React.createElement(
       'div',
-      { 'class': 'col-md-9 maincontent_box fluid_content' },
+      { className: 'col-md-9 maincontent_box fluid_content' },
       React.createElement(
         'div',
-        { 'class': 'row' },
+        { className: 'row' },
         React.createElement(
           'div',
-          { 'class': 'col-md-12' },
+          { className: 'col-md-12' },
           React.createElement(
             'h1',
-            { 'class': 'maincontent_heading' },
+            { className: 'maincontent_heading' },
             React.createElement(
               'div',
-              { 'class': 'box_title_heading' },
+              { className: 'box_title_heading' },
               'Photo Gallery'
             ),
             React.createElement(
               'div',
-              { 'class': 'box_allview_wrapper' },
+              { className: 'box_allview_wrapper' },
               '\xA0'
             )
           ),
           React.createElement(
             'div',
-            { 'class': 'main_content' },
+            { className: 'main_content' },
             React.createElement(
               'h2',
               null,
@@ -62,53 +62,53 @@ var Photo = React.createClass({
             ),
             React.createElement(
               'div',
-              { 'class': 'table-responsive photo_gallery' },
+              { className: 'table-responsive photo_gallery' },
               React.createElement(
                 'table',
-                { 'class': 'table' },
+                { className: 'table' },
                 React.createElement(
                   'tbody',
                   null,
                   React.createElement(
                     'tr',
-                    { role: 'row', setedgeborder: 'true' },
+                    { role: 'row' },
                     React.createElement(
                       'td',
-                      { colspan: '30', style: 'border:none;' },
+                      null,
                       React.createElement(
                         'div',
                         null,
                         React.createElement(
                           'div',
-                          { 'class': 'photo_tileview album', style: album1 },
+                          { className: 'photo_tileview album', style: album1 },
                           React.createElement(
                             'div',
-                            { 'class': 'photo_tileview_inner', style: inner },
+                            { className: 'photo_tileview_inner', style: inner },
                             React.createElement(
                               'div',
-                              { 'class': 'photo_tileview_content box_photo', style: photo1 },
+                              { className: 'photo_tileview_content box_photo', style: photo1 },
                               React.createElement(
                                 'a',
                                 { href: 'resources_photogallery_album.html', style: anchor },
                                 React.createElement('img', { src: this.props.appitem.Img, style: image }),
                                 React.createElement(
                                   'div',
-                                  { 'class': 'photo_tileview_detailsbox caption_photo', style: caption_photo1 },
+                                  { className: 'photo_tileview_detailsbox caption_photo', style: caption_photo1 },
                                   React.createElement(
                                     'ul',
-                                    { 'class': 'photo_tileview_detailslist' },
+                                    { className: 'photo_tileview_detailslist' },
                                     React.createElement(
                                       'li',
-                                      { 'class': 'photo_tileview_medium photo_tileview_titlesmcollapsed' },
+                                      { className: 'photo_tileview_medium photo_tileview_titlesmcollapsed' },
                                       React.createElement(
                                         'div',
-                                        { 'class': 'photo_tileview_titletxtsmcollapsed', expanded: 'photo_tileview_titletxtsmexpanded', collapsed: 'photo_tileview_titletxtsmcollapsed' },
+                                        { className: 'photo_tileview_titletxtsmcollapsed', expanded: 'photo_tileview_titletxtsmexpanded', collapsed: 'photo_tileview_titletxtsmcollapsed' },
                                         this.props.appitem.Title
                                       )
                                     ),
                                     React.createElement(
                                       'li',
-                                      { 'class': 'photo_tileview_descmedium' },
+                                      { className: 'photo_tileview_descmedium' },
                                       React.createElement('div', null),
                                       React.createElement('div', null)
                                     )
@@ -118,29 +118,29 @@ var Photo = React.createClass({
                             ),
                             React.createElement(
                               'div',
-                              { 'class': 'photo_tileview_tabularbox hide' },
+                              { className: 'photo_tileview_tabularbox hide' },
                               React.createElement(
                                 'a',
-                                { 'class': 'photo_tileview_selectionbox' },
+                                { className: 'photo_tileview_selectionbox' },
                                 React.createElement(
                                   'span',
-                                  { 'class': 's4-itm-cbox s4-itm-imgcbox' },
+                                  { className: 's4-itm-cbox s4-itm-imgcbox' },
                                   React.createElement(
                                     'span',
-                                    { 'class': 's4-itm-imgcbx-inner' },
+                                    { className: 's4-itm-imgcbx-inner' },
                                     React.createElement(
                                       'span',
-                                      { 'class': 'selectitem-span' },
-                                      React.createElement('i', { 'class': 'fa fa-check' })
+                                      { className: 'selectitem-span' },
+                                      React.createElement('i', { className: 'fa fa-check' })
                                     )
                                   )
                                 )
                               ),
-                              React.createElement('div', { 'class': 'list-titlelink' }),
+                              React.createElement('div', { className: 'list-titlelink' }),
                               React.createElement(
                                 'a',
-                                { 'class': 'lstitmlinkanchor ellpsis-a-tile' },
-                                React.createElement('i', { 'class': 'fa fa-ellipsis-h' })
+                                { className: 'lstitmlinkanchor ellpsis-a-tile' },
+                                React.createElement('i', { className: 'fa fa-ellipsis-h' })
                               )
                             )
                           )
