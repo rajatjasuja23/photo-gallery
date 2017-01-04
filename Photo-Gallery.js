@@ -31,20 +31,20 @@ var Photo = React.createClass({
 
     return React.createElement(
       'div',
-      { className: 'photo_tileview album1', style: album1 },
+      { className: 'photo_tileview album', style: album1 },
       React.createElement(
         'div',
         { className: 'photo_tileview_inner', style: inner },
         React.createElement(
           'div',
-          { className: 'photo_tileview_content box_photo1', style: photo1 },
+          { className: 'photo_tileview_content box_photo', style: photo1 },
           React.createElement(
             'a',
-            { href: '#', style: anchor },
-            React.createElement('img', { src: this.props.appitem.Img, border: '0', style: image }),
+            { style: anchor },
+            React.createElement('img', { src: this.props.appitem.Img, style: image }),
             React.createElement(
               'div',
-              { className: 'photo_tileview_detailsbox caption_photo1', style: caption_photo1 },
+              { className: 'photo_tileview_detailsbox caption_photo', style: caption_photo1 },
               React.createElement(
                 'ul',
                 { className: 'photo_tileview_detailslist' },
@@ -109,7 +109,7 @@ var PhotoGallery = React.createClass({
   retrieveFromWebService: function retrieveFromWebService() {
     console.log('inside component did mount');
     var that = this;
-    var url = "photo-gallery.js";
+    var url = "/SiteAssets/Photo%20Gallery/photo-galleryjson.js";
     fetch(url).then(function (response) {
       if (response.status >= 400) {
         throw new Error("no server");

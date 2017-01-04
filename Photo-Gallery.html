@@ -36,12 +36,12 @@
           width:'100%'
         }
 
-return  <div className="photo_tileview album1" style={album1}>
+return  <div className="photo_tileview album" style={album1}>
                               <div className="photo_tileview_inner" style={inner} >
-  <div className="photo_tileview_content box_photo1" style={photo1}>
-                                  <a href="#" style={anchor}>
-    <img src={this.props.appitem.Img} border="0" style={image}/> 
-                                    <div className="photo_tileview_detailsbox caption_photo1" style={caption_photo1}>
+  <div className="photo_tileview_content box_photo" style={photo1}>
+                                  <a style={anchor}>
+    <img src={this.props.appitem.Img} style={image}/> 
+                                    <div className="photo_tileview_detailsbox caption_photo" style={caption_photo1}>
                                       <ul className="photo_tileview_detailslist">
                                         <li className="photo_tileview_medium photo_tileview_titlesmcollapsed">
                                           <div className="photo_tileview_titletxtsmcollapsed" >{this.props.appitem.Title}</div>
@@ -97,7 +97,7 @@ retrieveFromWebService()
 {
  console.log('inside component did mount')
     var that=this;
-    var url="photo-gallery.js"
+    var url="/SiteAssets/Photo%20Gallery/photo-galleryjson.js"
     fetch(url)
     .then(function(response)
     {
