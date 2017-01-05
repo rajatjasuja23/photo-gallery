@@ -7,7 +7,9 @@
 
 <script type="text/babel">
 
+
     var Photo=React.createClass({
+    
     render()
     {
         var album1={
@@ -35,8 +37,9 @@
         var image={
           width:'100%'
         }
+       
 
-return  <div className="photo_tileview album" style={album1}>
+return  (<div className="photo_tileview album" style={album1}>
                               <div className="photo_tileview_inner" style={inner}>
                                 <div className="photo_tileview_content box_photo" style={photo1}>
                                   <a href="resources_photogallery_album.html" style={anchor}>
@@ -70,7 +73,7 @@ return  <div className="photo_tileview album" style={album1}>
                                   </a>
                                 </div>
                               </div>
-                            </div>   
+</div>);   
 
 }
 });
@@ -126,13 +129,37 @@ retrieveFromWebService()
 
 renderPromotions()
 {
-    return this.state.promodata.map((promoitem) => (
-        <Photo appitem={promoitem} />
+    return this.state.promodata.map((promoitem,index) => (
+        <Photo appitem={promoitem}  key={index} />
     ));  
 },
     render()
     {
-        return <div>{this.renderPromotions()}</div>;
+        return( <div className="col-md-9 maincontent_box fluid_content">
+          <div className="row">
+            <div className="col-md-12">
+              <h1 className="maincontent_heading">
+                <div className="box_title_heading">Photo Gallery</div>
+                <div className="box_allview_wrapper">&nbsp;</div>
+              </h1>
+              <div className="main_content">
+                <h2>Latest Albums</h2>
+                <div className="table-responsive photo_gallery">
+                  <table className="table">
+                    <tbody>
+                      <tr >
+                        <td>
+                            <div>{this.renderPromotions()}</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                 </div>
+                  </div>
+                   </div>
+                   </div>);
+        
     }
 
 });
@@ -147,30 +174,7 @@ document.getElementById('PhotoGallery')
 
 <body>
     <div id="PhotoGallery">
-  <div className="col-md-9 maincontent_box fluid_content">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="maincontent_heading">
-                <div className="box_title_heading">Photo Gallery</div>
-                <div className="box_allview_wrapper">&nbsp;</div>
-              </h1>
-              <div className="main_content">
-                <h2>Latest Albums</h2>
-                <div className="table-responsive photo_gallery">
-                  <table className="table">
-                    <tbody>
-                      <tr role="row">
-                        <td>
-                          
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  
    </div> 
 </body>
 </html>

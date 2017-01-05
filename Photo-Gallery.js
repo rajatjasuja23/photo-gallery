@@ -1,5 +1,6 @@
 'use strict';
-
+var PhotoGallerymodule= PhotoGallerymodule || {} 
+PhotoGallerymodule.Load= function(){
 var Photo = React.createClass({
   displayName: 'Photo',
   render: function render() {
@@ -133,17 +134,73 @@ var PhotoGallery = React.createClass({
   },
 
   renderPromotions: function renderPromotions() {
-    return this.state.promodata.map(function (promoitem) {
-      return React.createElement(Photo, { appitem: promoitem });
+    return this.state.promodata.map(function (promoitem, index) {
+      return React.createElement(Photo, { appitem: promoitem, key: index });
     });
   },
   render: function render() {
     return React.createElement(
       'div',
-      null,
-      this.renderPromotions()
+      { className: 'col-md-9 maincontent_box fluid_content' },
+      React.createElement(
+        'div',
+        { className: 'row' },
+        React.createElement(
+          'div',
+          { className: 'col-md-12' },
+          React.createElement(
+            'h1',
+            { className: 'maincontent_heading' },
+            React.createElement(
+              'div',
+              { className: 'box_title_heading' },
+              'Photo Gallery'
+            ),
+            React.createElement(
+              'div',
+              { className: 'box_allview_wrapper' },
+              '\xA0'
+            )
+          ),
+          React.createElement(
+            'div',
+            { className: 'main_content' },
+            React.createElement(
+              'h2',
+              null,
+              'Latest Albums'
+            ),
+            React.createElement(
+              'div',
+              { className: 'table-responsive photo_gallery' },
+              React.createElement(
+                'table',
+                { className: 'table' },
+                React.createElement(
+                  'tbody',
+                  null,
+                  React.createElement(
+                    'tr',
+                    null,
+                    React.createElement(
+                      'td',
+                      null,
+                      React.createElement(
+                        'div',
+                        null,
+                        this.renderPromotions()
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
     );
   }
 });
 
 ReactDOM.render(React.createElement(PhotoGallery, null), document.getElementById('PhotoGallery'));
+}
